@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by mcgrady on 2019/5/20.
  */
-public abstract class BaseLinkageGroupItem<T extends Object> implements Serializable {
+public abstract class BaseLinkageGroupItem<T extends BaseLinkageGroupItem.ItemInfo> implements Serializable {
 
     public boolean isHeader;
     public  T itemInfo;

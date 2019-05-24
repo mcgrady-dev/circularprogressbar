@@ -13,7 +13,7 @@ import com.mcgrady.xui.linkagerecyclerview.interf.ILinkageSecondaryAdapterConfig
 /**
  * Created by mcgrady on 2019/5/20.
  */
-public class DefaultLinkageSecondaryAdapterConfig implements ILinkageSecondaryAdapterConfig {
+public class DefaultLinkageSecondaryAdapterConfig implements ILinkageSecondaryAdapterConfig<DefaultLinkageGroupedItem.ItemInfo> {
 
     private Context mContext;
     private OnSecondaryItemBindListener mItemBindListener;
@@ -56,7 +56,7 @@ public class DefaultLinkageSecondaryAdapterConfig implements ILinkageSecondaryAd
     }
 
     @Override
-    public void onBindViewHolder(LinkageSecondaryViewHolder holder, BaseLinkageGroupItem groupItem, int position) {
+    public void onBindViewHolder(LinkageSecondaryViewHolder holder, BaseLinkageGroupItem<DefaultLinkageGroupedItem.ItemInfo> groupItem, int position) {
         ((TextView) holder.getView(R.id.level_2_title)).setText(groupItem.itemInfo.getTitle());
         ((TextView) holder.getView(R.id.level_2_content)).setText(groupItem.itemInfo.getContent());
 
@@ -66,7 +66,7 @@ public class DefaultLinkageSecondaryAdapterConfig implements ILinkageSecondaryAd
     }
 
     @Override
-    public void onBindHeaderViewHolder(LinkageSecondaryHeaderViewHolder holder, BaseLinkageGroupItem item, int position) {
+    public void onBindHeaderViewHolder(LinkageSecondaryHeaderViewHolder holder, BaseLinkageGroupItem<DefaultLinkageGroupedItem.ItemInfo> item, int position) {
         ((TextView) holder.getView(R.id.secondary_header)).setText(item.header);
 
         if (mHeaderBindListener != null) {

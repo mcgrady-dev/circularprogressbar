@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:padding="@dimen/margin12"
+        android:padding="12dp"
         android:singleLine="true"
         tools:title="test_title" />
 </LinearLayout>
